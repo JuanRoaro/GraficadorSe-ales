@@ -23,6 +23,15 @@ namespace WpfApp1GraficadorSeñales
         public MainWindow()
         {
             InitializeComponent();
+
+            plnGrafica.Points.Add(new Point(0, 10));
+            plnGrafica.Points.Add(new Point(50, 20));
+            plnGrafica.Points.Add(new Point(150, 10));
+            plnGrafica.Points.Add(new Point(200, 500));
+            plnGrafica.Points.Add(new Point(250, 0));
+            plnGrafica.Points.Add(new Point(300, 100));
+            plnGrafica.Points.Add(new Point(350, 30));
+            plnGrafica.Points.Add(new Point(800, 30));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

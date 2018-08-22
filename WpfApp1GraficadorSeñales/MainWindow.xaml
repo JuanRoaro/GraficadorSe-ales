@@ -20,7 +20,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="203,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"><Run Text="Frecuencia"/><Run Text=" de muestreo"/><Run Text=":"/></TextBlock>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="203,165,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120"/>
         <Button Content="Grafica" HorizontalAlignment="Left" Margin="367,35,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="214" Margin="10,205,0,0" VerticalAlignment="Top" Width="772"/>
+            <ScrollViewer HorizontalAlignment="Left" Height="214" Margin="10,205,0,0" VerticalAlignment="Top" Width="772" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
+                <Polyline Stroke="Black" StrokeThickness="2" Name="plnGrafica"/>
+            </ScrollViewer>
 
     </Grid>
 </Window>
