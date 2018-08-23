@@ -24,19 +24,31 @@ namespace WpfApp1GraficadorSeñales
         {
             InitializeComponent();
 
-            plnGrafica.Points.Add(new Point(0, 10));
-            plnGrafica.Points.Add(new Point(50, 20));
-            plnGrafica.Points.Add(new Point(150, 10));
-            plnGrafica.Points.Add(new Point(200, 500));
-            plnGrafica.Points.Add(new Point(250, 0));
-            plnGrafica.Points.Add(new Point(300, 100));
-            plnGrafica.Points.Add(new Point(350, 30));
-            plnGrafica.Points.Add(new Point(800, 30));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Graficar_Click(object sender, RoutedEventArgs e)
         {
+            double amplitud = double.Parse(txtAmplitud.Text);
+            double tiempoInicial = double.Parse(txtTiempoInicial.Text);
+            double fase = double.Parse(txtFase.Text);
+            double tiempoFinal = double.Parse(txtTiempoFinal.Text);
+            double frecuencia = double.Parse(txtFrecuencia.Text);
+            double frecuenciaMuestreo = double.Parse(txtFrecuenciaMuestreo.Text);
 
+            SeñalSenoidal señal = new SeñalSenoidal(amplitud, fase, frecuencia);
+
+            double periodoMuestreo = 1 / frecuenciaMuestreo;
+
+            plnGrafica.Points.Clear();
+
+            for(double i = tiempoInicial; i <= tiempoFinal; i += periodoMuestreo )
+            {
+                plnGrafica.Points.Add(new Point(i * scrContenedor.Width, señal.evaluar(i) * ((scrContenedor.Height / 2.0) - 30) * - 1 + (scrContenedor.Height / 2)));
+            }
         }
+
+        
+
+
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FuncionSenoidal
+namespace WpfApp1GraficadorSeñales
 {
     class SeñalSenoidal
     {
@@ -32,5 +32,7 @@ namespace FuncionSenoidal
             resultado = Amplitud * Math.Sin(((2 * Math.PI * Frecuencia) * tiempo) + Fase);
             return resultado;
         }
+
+        
     }
 }
