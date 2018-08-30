@@ -58,13 +58,39 @@ namespace WpfApp1GraficadorSeñales
 
             foreach (Muestra muestra in señal.muestras)
             {
-                plnGrafica.Points.Add(new Point(muestra.x * scrContenedor.Width, (muestra.y * (scrContenedor.Height / 2.0 + scrContenedor.Height / 2))));
+                plnGrafica.Points.Add(new Point(muestra.x * scrContenedor.Width, (muestra.y * (((scrContenedor.Height / 2.0) - 30) * -1) + scrContenedor.Height / 2)));
             }
            
         }
 
-        
+        private void GraficarRampa_Click(object sender, RoutedEventArgs e)
+        {
+            
+            double tiempoInicial = double.Parse(txtTiempoInicial.Text);
+            
+            double tiempoFinal = double.Parse(txtTiempoFinal.Text);
+            double frecuenciaMuestreo = double.Parse(txtFrecuenciaMuestreo.Text);
 
+            Rampa señal = new Rampa();
 
+            double periodoMuestreo = 1 / frecuenciaMuestreo;
+
+            plnGrafica.Points.Clear();
+
+            for (double i = tiempoInicial; i <= tiempoFinal; i += periodoMuestreo)
+            {
+                double valorMuestra = señal.evaluar(i);
+
+                señal.muestras.Add(new Muestra(i, valorMuestra));
+
+            }
+
+            //Recorrer una coleccion o arreglo
+
+            foreach (Muestra muestra in señal.muestras)
+            {
+                plnGrafica.Points.Add(new Point(muestra.x * scrContenedor.Width, (muestra.y * (((scrContenedor.Height / 2.0) -30 )* -1)  + scrContenedor.Height / 2)));
+            }
+        }
     }
 }
