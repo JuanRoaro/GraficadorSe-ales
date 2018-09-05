@@ -20,10 +20,13 @@
         <TextBlock HorizontalAlignment="Left" Margin="203,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"><Run Text="Frecuencia"/><Run Text=" de muestreo"/><Run Text=":"/></TextBlock>
         <TextBox x:Name="txtFrecuenciaMuestreo" HorizontalAlignment="Left" Height="23" Margin="203,165,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Graficar" Content="Grafica" HorizontalAlignment="Left" Margin="367,35,0,0" VerticalAlignment="Top" Width="75" Click="Graficar_Click" />
-            <ScrollViewer HorizontalAlignment="Left" Height="214" Margin="10,205,0,0" VerticalAlignment="Top" Width="772" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" x:Name="scrContenedor">
-                <Polyline Stroke="Black" StrokeThickness="2" Name="plnGrafica"/>
-            </ScrollViewer>
+        <ScrollViewer HorizontalAlignment="Left" Height="214" Margin="203,205,0,0" VerticalAlignment="Top" Width="579" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" x:Name="scrContenedor">
+            <Polyline Stroke="Black" StrokeThickness="2" Name="plnGrafica"/>
+        </ScrollViewer>
         <Button x:Name="GraficarRampa" Content="Graficar rampa" HorizontalAlignment="Left" Margin="367,82,0,0" VerticalAlignment="Top" Width="250" Click="GraficarRampa_Click" />
+        <TextBlock x:Name="lblAmplitudMaximaPositivoY" HorizontalAlignment="Left" Margin="16,217,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblAmplitudCero" HorizontalAlignment="Left" Margin="16,290,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblAmplitudMaximaNegativoY" HorizontalAlignment="Left" Margin="16,393,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

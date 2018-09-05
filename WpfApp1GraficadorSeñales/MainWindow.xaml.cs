@@ -58,9 +58,12 @@ namespace WpfApp1GraficadorSeñales
 
             foreach (Muestra muestra in señal.muestras)
             {
-                plnGrafica.Points.Add(new Point(muestra.x * scrContenedor.Width, (muestra.y * (((scrContenedor.Height / 2.0) - 30) * -1) + scrContenedor.Height / 2)));
+                plnGrafica.Points.Add(new Point(muestra.x * scrContenedor.Width, (muestra.y / señal.AmplitudMaxima * (((scrContenedor.Height / 2.0) - 30) * -1) + scrContenedor.Height / 2)));
             }
-           
+
+            lblAmplitudMaximaNegativaY.Text = señal.AmplitudMaxima.ToString();
+            lblAmplitudMaximaNegativaY.Text = "-" + señal.AmplitudMaxima - ToString();
+
         }
 
         private void GraficarRampa_Click(object sender, RoutedEventArgs e)
